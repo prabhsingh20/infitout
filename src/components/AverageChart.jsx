@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AverageChart({ randomNumber, singleDigit, pointerPosition }) {
+function AverageChart({ randomNumber, singleDigit, pointerPositionTwo }) {
   const [showDetails, setShowDetails] = useState(false);
 
   const toggleDetails = () => {
@@ -17,7 +17,7 @@ function AverageChart({ randomNumber, singleDigit, pointerPosition }) {
           className="pointer"
           src="/pointer.svg"
           alt=""
-          style={{ left: pointerPosition * 0.9 + "px" }}
+          style={{ left: pointerPositionTwo * 0.9 + "px" }}
         />
         <div className="label">
           <div className="label-content">

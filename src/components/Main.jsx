@@ -9,16 +9,42 @@ function Main() {
   const [randomNumber, setRandomNumber] = useState(null);
   const [singleDigit, setSingleDigit] = useState(null);
   const [pointerPosition, setPointerPosition] = useState(152);
+  const [pointerPositionTwo, setPointerPositionTwo] = useState(102);
   const [buttonText, setButtonText] = useState("5min");
 
   const graphWidth = 30 * 10;
+  const pointerWidth = 2;
   const gridIntervals = 15;
 
   function handlePointer() {
     const intervalWidth = graphWidth / gridIntervals;
+    const maxPointerLeft = graphWidth - pointerWidth;
+    const maxPointerRight = graphWidth;
+
     const randomInterval = Math.floor(Math.random() * gridIntervals);
-    const randomLeft = randomInterval * intervalWidth;
-    setPointerPosition(randomLeft);
+    const randomPosition = randomInterval * intervalWidth;
+
+    const maxPosition = Math.min(
+      maxPointerRight,
+      Math.max(0, randomPosition - pointerWidth / 2)
+    );
+
+    setPointerPosition(maxPosition);
+  }
+  function handlePointerTwo() {
+    const intervalWidth = graphWidth / gridIntervals;
+    const maxPointerLeft = graphWidth - pointerWidth;
+    const maxPointerRight = graphWidth;
+
+    const randomInterval = Math.floor(Math.random() * gridIntervals);
+    const randomPosition = randomInterval * intervalWidth;
+
+    const maxPosition = Math.min(
+      maxPointerRight,
+      Math.max(0, randomPosition - pointerWidth / 2)
+    );
+
+    setPointerPositionTwo(maxPosition);
   }
 
   function handleText(text) {
@@ -44,6 +70,7 @@ function Main() {
     handleRandomNumber();
     handlePointer();
     handleText(text);
+    handlePointerTwo();
   }
 
   return (
@@ -64,6 +91,7 @@ function Main() {
           randomNumber={randomNumber}
           singleDigit={singleDigit}
           pointerPosition={pointerPosition}
+          pointerPositionTwo={pointerPositionTwo}
         />
         <OscillatorChart
           randomNumber={randomNumber}
