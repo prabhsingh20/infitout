@@ -260,6 +260,9 @@ img {
 }
 
 @media (max-width: 500px) {
+  main {
+    padding: 0;
+  }
   .calculation-content {
     gap: 15rem;
   }
