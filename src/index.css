@@ -233,6 +233,16 @@ img {
   top: 4rem;
   transition: right 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+@media (max-width: 1000px) {
+  .calculation {
+    column-gap: 6rem;
+  }
+  .calculation-content {
+    gap: 20rem;
+  }
+}
+
 @media (max-width: 750px) {
   main {
     padding: 2rem 10rem;
@@ -246,5 +256,14 @@ img {
 @media (max-width: 600px) {
   main {
     padding: 2rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .calculation-content {
+    gap: 15rem;
+  }
+  .pointer {
+    width: 2rem;
   }
 }
